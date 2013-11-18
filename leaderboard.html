@@ -4,14 +4,22 @@
 
 <body>
   <div id="outer">
+    {{loginButtons}}
     {{> leaderboard}}
   </div>
 </body>
 
 <template name="leaderboard">
+
   <div class="leaderboard">
+    <form>
+      <input name="name" type="text" value="" placeholder="New name" />
+      <input type="submit" value="Add"/>
+    </form>
+
     {{#each players}}
       {{> player}}
+      <hr>
     {{/each}}
   </div>
 
@@ -31,6 +39,7 @@
   <div class="player {{selected}}">
     <span class="name">{{name}}</span>
     <span class="score">{{score}}</span>
+    <span>{{author}}</span>
   </div>
 </template>
 
